@@ -10,6 +10,8 @@ requirements:
   build:
     - python==3.6
     - setuptools
+    - addict
+    - yaml
   run:
     - python==3.6
     - addict

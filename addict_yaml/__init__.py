@@ -90,6 +90,6 @@ class Dict(_Dict):
 			if not os.path.exists(dirname):
 				os.makedirs(dirname)
 			with open(args[0], 'w') as f:
-				dump(self.as_plain_dict(), f, *(args[1:]), **kwargs)
+				dump(self.to_dict(), f, *(args[1:]), **kwargs)
 		else:
-			return dump(self.as_plain_dict(), *args, **kwargs)
+			return dump(self.to_dict(), *args, **kwargs)
