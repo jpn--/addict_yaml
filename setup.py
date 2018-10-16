@@ -16,7 +16,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='addict_yaml',
-    version='0.2.3',
+    version='0.2.4',
 
     description='Yaml-friendly attribute dictionaries',
     long_description=long_description,
