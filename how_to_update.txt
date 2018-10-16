@@ -1,1 +1,4 @@
 bumpversion --config-file bumpversion.cfg patch
+
+conda build --python 3.6 .
+

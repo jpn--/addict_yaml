@@ -10,7 +10,7 @@ from pprint import pformat
 __all__ = ('yaml', 'Dict')
 
 def _prettyprint_fallback(x):
-	if isinstance(x, adict):
+	if isinstance(x, _Dict):
 		return repr(x)
 	else:
 		return pformat(x)
@@ -19,8 +19,8 @@ class Dict(_Dict):
 
 	def __repr__(self):
 		if self.keys():
-			m = max(map(len, list(self.keys()))) + 1
-			return '\n'.join(['┣'+k.rjust(m) + ': ' + _prettyprint_fallback(v).replace('\n','\n┃'+' '*(m+2)) for k, v in self.items()])
+			m = max(map(len, list(str(_) for _ in self.keys()))) + 1
+			return '\n'.join(['┣'+str(k).rjust(m) + ': ' + _prettyprint_fallback(v).replace('\n','\n┃'+' '*(m+2)) for k, v in self.items()])
 		else:
 			return self.__class__.__name__ + "()"
 
