@@ -25,7 +25,7 @@ class Dict(_Dict):
 			return self.__class__.__name__ + "()"
 
 	@classmethod
-	def load(cls, filename, *args, logger=None, **kwargs):
+	def load(cls, filename, *args, logger=None, encoding='utf-8', **kwargs):
 		"""
 
 		Parameters
@@ -46,7 +46,7 @@ class Dict(_Dict):
 				raise FileNotFoundError(filename)
 			try:
 				yaml_check(filename, logger=logging.getLogger('') if logger is None else logger)
-				with open(filename, 'rb') as f:
+				with open(filename, 'r', encoding=encoding) as f:
 					return cls(yaml.load(f, *(args[1:]), **kwargs))
 			except Exception as err:
 				print("~"*40)
