@@ -122,7 +122,7 @@ def yaml_check(file, config_file=None, logger=None):
 		first = True
 		any_errors = False
 		max_level = 0
-		with open(filepath) as f:
+		with open(filepath, 'rb') as f:
 			for problem in linter.run(f, conf, filepath):
 				if first:
 					log(f"FOUND YAML ERRORS IN {file}")

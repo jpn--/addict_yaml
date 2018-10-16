@@ -46,7 +46,7 @@ class Dict(_Dict):
 				raise FileNotFoundError(filename)
 			try:
 				yaml_check(filename, logger=logging.getLogger('') if logger is None else logger)
-				with open(filename, 'r') as f:
+				with open(filename, 'rb') as f:
 					return cls(yaml.load(f, *(args[1:]), **kwargs))
 			except Exception as err:
 				print("~"*40)
