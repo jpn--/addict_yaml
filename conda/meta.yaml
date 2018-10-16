@@ -8,16 +8,16 @@ source:
 
 requirements:
   build:
-    - python==3.6
+    - python
     - setuptools
     - addict
     - yaml
   run:
-    - python==3.6
+    - python
     - addict
     - yaml
   test:
-    - python==3.6
+    - python
     - addict
     - yaml
 
