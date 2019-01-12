@@ -10,15 +10,15 @@ requirements:
   build:
     - python
     - setuptools
-    - addict
+    - addict >=2.2
     - pyyaml
   run:
     - python
-    - addict
+    - addict >=2.2
     - pyyaml
   test:
     - python
-    - addict
+    - addict >=2.2
     - pyyaml
 
 about:
