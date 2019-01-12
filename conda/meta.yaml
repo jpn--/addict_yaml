@@ -11,15 +11,15 @@ requirements:
     - python
     - setuptools
     - addict
-    - yaml
+    - pyyaml
   run:
     - python
     - addict
-    - yaml
+    - pyyaml
   test:
     - python
     - addict
-    - yaml
+    - pyyaml
 
 about:
   home: https://github.com/jpn--/addict_yaml
