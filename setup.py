@@ -51,6 +51,7 @@ setup(
     install_requires=[
         'addict>=2.2',
         'yaml',
+        'pyyaml',
     ],
 
 )
