@@ -25,7 +25,7 @@ class Dict(_Dict):
 			return self.__class__.__name__ + "()"
 
 	@classmethod
-	def load(cls, filename, *args, logger=None, encoding='utf-8', **kwargs):
+	def load(cls, filename, *args, logger=None, encoding='utf-8', Loader=yaml.SafeLoader, **kwargs):
 		"""
 
 		Parameters
@@ -47,7 +47,7 @@ class Dict(_Dict):
 			try:
 				yaml_check(filename, logger=logging.getLogger('') if logger is None else logger)
 				with open(filename, 'r', encoding=encoding) as f:
-					return cls(yaml.load(f, *(args[1:]), **kwargs))
+					return cls(yaml.load(f, *(args[1:]), Loader=Loader, **kwargs))
 			except Exception as err:
 				print("~"*40)
 				print(f"ERROR READING {filename}")
